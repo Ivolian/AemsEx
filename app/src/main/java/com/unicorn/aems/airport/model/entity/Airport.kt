@@ -1,0 +1,29 @@
+package com.ivotai.kotlindemo.movie.model.entity
+
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
+import me.yokeyword.indexablerv.IndexableEntity
+
+
+@Entity
+class Airport(
+        @Id var _id: Long = 0,
+        var id: String,
+        var name: String,
+        var code: String,
+        var lanUrl: String,
+        var internetUrl: String,
+        var updateDate: String,
+        var deleted: Int,
+        var pinyin: String
+) : IndexableEntity {
+
+    override fun setFieldIndexBy(indexField: String?) {
+    }
+
+    override fun setFieldPinyinIndexBy(pinyin: String?) {
+    }
+
+    override fun getFieldIndexBy() = pinyin
+
+}

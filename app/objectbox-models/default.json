@@ -1,0 +1,62 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1015338351004816562",
+      "lastPropertyId": "9:8495478189960704506",
+      "name": "Airport",
+      "properties": [
+        {
+          "id": "1:6741054422666492748",
+          "name": "_id"
+        },
+        {
+          "id": "2:1215287954060420523",
+          "name": "id"
+        },
+        {
+          "id": "3:6611082443141507378",
+          "name": "name"
+        },
+        {
+          "id": "4:7716637170607719739",
+          "name": "code"
+        },
+        {
+          "id": "5:5537992436172927496",
+          "name": "lanUrl"
+        },
+        {
+          "id": "6:977083778558272896",
+          "name": "internetUrl"
+        },
+        {
+          "id": "7:7568154543278677497",
+          "name": "updateDate"
+        },
+        {
+          "id": "8:6530911191872649878",
+          "name": "pinyin"
+        },
+        {
+          "id": "9:8495478189960704506",
+          "name": "deleted"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:1015338351004816562",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
