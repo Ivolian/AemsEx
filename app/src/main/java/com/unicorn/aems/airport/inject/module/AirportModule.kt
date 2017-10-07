@@ -2,7 +2,7 @@ package com.ivotai.kotlindemo.movie.inject.module
 
 import com.ivotai.kotlindemo.movie.inject.scope.AirportScope
 import com.ivotai.kotlindemo.movie.model.entity.Airport
-import com.ivotai.kotlindemo.movie.model.respository.AirportRepository
+import com.unicorn.aems.airport.model.respository.AirportRepository
 import com.ivotai.kotlindemo.movie.model.respository.AirportRepositoryImpl
 import com.unicorn.aems.airport.model.api.AirportApi
 import dagger.Module
