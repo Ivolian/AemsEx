@@ -1,4 +1,4 @@
-package com.ivotai.kotlindemo.movie.view
+package com.unicorn.aems.airport.view
 
 import com.ivotai.kotlindemo.movie.model.entity.Airport
 

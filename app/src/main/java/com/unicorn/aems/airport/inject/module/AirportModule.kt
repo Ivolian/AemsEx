@@ -2,6 +2,8 @@ package com.ivotai.kotlindemo.movie.inject.module
 
 import com.ivotai.kotlindemo.movie.inject.scope.AirportScope
 import com.ivotai.kotlindemo.movie.model.entity.Airport
+import com.ivotai.kotlindemo.movie.model.respository.AirportRepository
+import com.ivotai.kotlindemo.movie.model.respository.AirportRepositoryImpl
 import com.unicorn.aems.airport.model.api.AirportApi
 import dagger.Module
 import dagger.Provides
@@ -22,9 +24,8 @@ class AirportModule {
     @Provides
     fun api(@Named(value = "apk") retrofit: Retrofit): AirportApi = retrofit.create(AirportApi::class.java)
 
+    @AirportScope
+    @Provides
+    fun repository(api: AirportApi, box: Box<Airport>): AirportRepository = AirportRepositoryImpl(api, box)
 
-//    @AirportScope
-//    @Provides
-//    fun repository(box: Box<Airport>): AirportRepository = AirportRepositoryImpl(box)
-//
 }

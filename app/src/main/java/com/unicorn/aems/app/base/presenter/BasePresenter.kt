@@ -10,7 +10,7 @@ abstract class BasePresenter : Presenter {
 
     // 生命周期结束时 dispose
     override fun onViewDestroyed(){
-        subscriptions.dispose()
+//        subscriptions.dispose()
     }
 
 }

@@ -22,7 +22,6 @@ class AirportAdapter(context: Context) : IndexableAdapter<Airport>() {
 
     private val layoutInflater = LayoutInflater.from(context)
 
-
     override fun onCreateTitleViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
         val view = layoutInflater.inflate(R.layout.index_airport, parent, false)
         return VH(view)
