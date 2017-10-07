@@ -7,12 +7,11 @@ import com.ivotai.kotlindemo.app.ComponentsHolder
 import com.ivotai.kotlindemo.app.base.view.BaseAct
 import com.ivotai.kotlindemo.movie.model.entity.Airport
 import com.ivotai.kotlindemo.movie.presenter.AirportPresenter
-import com.jakewharton.rxbinding2.view.RxView
+import com.jakewharton.rxbinding2.widget.RxTextView
 import com.unicorn.aems.R
 import com.unicorn.aems.airport.view.adapter.AirportAdapter
 import kotlinx.android.synthetic.main.act_airport.*
 import me.yokeyword.indexablerv.IndexableLayout
-import java.util.concurrent.TimeUnit
 
 
 class AirportAct : BaseAct(), AirportView {
@@ -28,9 +27,9 @@ class AirportAct : BaseAct(), AirportView {
     private val presenter by lazy { AirportPresenter(this, ComponentsHolder.airportComponent.getRepository()) }
 
     override fun bindPresenter(savedInstanceState: Bundle?) {
-//        RxTextView.afterTextChangeEvents(etSearch)
-//                .map { it.editable().toString().trim() }
-//                .subscribe { presenter.onQuery(it) }
+        RxTextView.afterTextChangeEvents(etSearch)
+                .map { it.editable().toString().trim() }
+                .subscribe { presenter.onTextChange(it) }
 //        RxView.clicks(btnUpdate)
 //                .throttleFirst(1, TimeUnit.SECONDS)
 //                .subscribe(object :io.reactivex.functions.Consumer<Any>{
