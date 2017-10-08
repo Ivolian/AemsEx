@@ -7,14 +7,13 @@ import com.unicorn.aems.airport.model.respository.AirportRepository
 import com.unicorn.aems.airport.view.AirportView
 import com.unicorn.aems.app.base.presenter.BasePresenter
 import io.reactivex.rxkotlin.subscribeBy
-import org.joda.time.DateTime
 import java.util.*
 
 
 class AirportPresenter(private var view: AirportView, private var repository: AirportRepository) : BasePresenter() {
 
     override fun onViewCreated() {
-//        load("")
+        load("")
     }
 
     fun onAirportSelected(airport: Airport) {
@@ -22,11 +21,11 @@ class AirportPresenter(private var view: AirportView, private var repository: Ai
     }
 
     fun onBtnClick() = with(repository) {
-        checkUpdate().map {
+        checkForUpdates().map {
             it.list.forEach({
                 it.pinyin = Pinyin.toPinyin(it.name, "")
-                // todo question1
-                it.updateDate = Date()
+                // todo 有数据时返回时间早了 8 小时
+                    it.updateDate = Date()
             })
             it.list
         }
@@ -43,18 +42,18 @@ class AirportPresenter(private var view: AirportView, private var repository: Ai
 
 
     fun onTextChange(text: String) {
-//        load(text)
+        load(text)
     }
 
-//    private fun load(query: String) = repository.get(query).subscribeBy(
-//            onNext = {
-//                ""
-//                view.render(it)
-//            },
-//            onError = {
-//                ToastUtils.showShort("加载机场列表失败")
-//            }
-//    )
+    private fun load(query: String) = repository.query(query).subscribeBy(
+            onNext = {
+                ""
+                view.render(it)
+            },
+            onError = {
+                ToastUtils.showShort("加载机场列表失败")
+            }
+    )
 
 
 }

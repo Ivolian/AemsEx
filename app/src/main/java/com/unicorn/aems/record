@@ -3,4 +3,7 @@ https://github.com/objectbox/objectbox-java/issues/63
 C:\Users\Administrator\AppData\Local\Android\sdk\platform-tools
 adb forward tcp:8090 tcp:8090
 
+//  4 rx or plain
+
+
 http://objectbox.io/objectbox-1-1-introduces-data-browser/

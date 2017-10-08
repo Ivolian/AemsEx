@@ -9,8 +9,8 @@ import io.reactivex.Single
 interface AirportRepository {
 
     val lastUpdateDate: String
-    fun checkUpdate(): Observable<AirportResponse>
-//    fun get(query: String): Observable<List<Airport>>
+    fun checkForUpdates(): Observable<AirportResponse>
+    fun query(input: String): Observable<List<Airport>>
     fun put(airports: List<Airport>)
 
 }
