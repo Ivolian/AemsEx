@@ -13,47 +13,42 @@ import java.util.*
 class AirportPresenter(private var view: AirportView, private var repository: AirportRepository) : BasePresenter() {
 
     override fun onViewCreated() {
-        load("")
+        load()
     }
 
     fun onAirportSelected(airport: Airport) {
 
     }
 
-    fun onBtnClick() = with(repository) {
-        checkForUpdates().map {
-            it.list.forEach({
-                it.pinyin = Pinyin.toPinyin(it.name, "")
-                // todo 有数据时返回时间早了 8 小时
-                    it.updateDate = Date()
-            })
-            it.list
-        }
-                .subscribeBy(
-                        onNext = {
-                            put(it)
-//                            load("")
-                        },
-                        onError = {}
-                )
-    }
+    fun onBtnClick() = repository.checkForUpdates()
+            .map {
+                val airports = it.list
+                airports.forEach { airport ->
+                    airport.pinyin = Pinyin.toPinyin(airport.name, "")
+                    // todo 时间早了 8 小时
+                    airport.updateDate = Date()
+                }
+                airports
+            }
+            .subscribeBy(
+                    onNext = {
+                        repository.put(it)
+                        load()
+                    },
+                    onError = {
+                        ToastUtils.showShort("更新机场失败")
+                    }
+            )
 
-    // 加载并显示列表
 
-
-    fun onTextChange(text: String) {
+    fun onKeywordChange(text: String) {
         load(text)
     }
 
-    private fun load(query: String) = repository.query(query).subscribeBy(
-            onNext = {
-                ""
-                view.render(it)
-            },
-            onError = {
-                ToastUtils.showShort("加载机场列表失败")
-            }
-    )
+    private fun load() {
+        load("")
+    }
 
+    private fun load(keyword: String) = repository.query(keyword).subscribe { view.render(it) }
 
 }

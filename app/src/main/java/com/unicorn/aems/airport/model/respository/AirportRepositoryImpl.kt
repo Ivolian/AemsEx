@@ -21,20 +21,18 @@ class AirportRepositoryImpl(private val api: AirportApi, private val box: Box<Ai
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
     }
-    // todo 3 线程转换
 
-    // todo 5 put 的更新依据
 
     // 测试
     // 当数据为空返回空ArrayList
     // todo check 逻辑删除
-    override fun query(input: String): Observable<List<Airport>> {
+    override fun query(keyword: String): Observable<List<Airport>> {
         val qu = box.query()
                 .equal(Airport_.deleted, 0)
-                .contains(Airport_.name, input)
+                .contains(Airport_.name, keyword)
                 .or()
                 .equal(Airport_.deleted, 0)
-                .contains(Airport_.pinyin, input.toUpperCase())
+                .contains(Airport_.pinyin, keyword.toUpperCase())
                 .build()
         return RxQuery.observable(qu)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -42,7 +40,6 @@ class AirportRepositoryImpl(private val api: AirportApi, private val box: Box<Ai
 
     // 测试
     // 当数据为空时返回 19000101000000
-
     override val lastUpdateDate: String
         get() {
             val airport = box.query()
@@ -57,6 +54,13 @@ class AirportRepositoryImpl(private val api: AirportApi, private val box: Box<Ai
     override fun put(airports: List<Airport>) {
         box.put(airports)
     }
+
+
+    override fun defaultAirport(): Airport? = box.query()
+                .equal(Airport_.deleted, 0)
+                .build()
+                .findFirst()
+
 
 }
 

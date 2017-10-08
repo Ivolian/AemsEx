@@ -8,7 +8,8 @@ import java.util.*
 
 @Entity
 class Airport(
-        @Id var _id: Long = 0,
+        @Id(assignable = true)
+        var _id: Long = 0,
         var id: String,
         var name: String,
         var code: String,

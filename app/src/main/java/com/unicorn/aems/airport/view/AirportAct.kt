@@ -31,7 +31,7 @@ class AirportAct : BaseAct(), AirportView {
     override fun bindPresenter() {
         RxTextView.afterTextChangeEvents(etQuery)
                 .map { event -> event.editable().toString().trim() }
-                .subscribe { presenter.onTextChange(it) }
+                .subscribe { presenter.onKeywordChange(it) }
         RxView.clicks(btnUpdate)
                 .throttleFirst(1, TimeUnit.SECONDS)
                 .subscribe { presenter.onBtnClick() }
