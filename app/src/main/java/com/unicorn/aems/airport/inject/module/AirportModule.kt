@@ -1,4 +1,4 @@
-package com.ivotai.kotlindemo.movie.inject.module
+package com.unicorn.aems.airport.inject.module
 
 import com.ivotai.kotlindemo.movie.inject.scope.AirportScope
 import com.ivotai.kotlindemo.movie.model.entity.Airport

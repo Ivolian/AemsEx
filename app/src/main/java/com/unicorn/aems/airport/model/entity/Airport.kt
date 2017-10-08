@@ -3,6 +3,7 @@ package com.ivotai.kotlindemo.movie.model.entity
 import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id
 import me.yokeyword.indexablerv.IndexableEntity
+import java.util.*
 
 
 @Entity
@@ -13,7 +14,7 @@ class Airport(
         var code: String,
         var lanUrl: String,
         var internetUrl: String,
-        var updateDate: String,
+        var updateDate: Date,
         var deleted: Int,
         var pinyin: String
 ) : IndexableEntity {

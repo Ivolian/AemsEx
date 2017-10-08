@@ -10,7 +10,7 @@ interface AirportRepository {
 
     val lastUpdateDate: String
     fun checkUpdate(): Observable<AirportResponse>
-    fun get(query: String): Observable<List<Airport>>
+//    fun get(query: String): Observable<List<Airport>>
     fun put(airports: List<Airport>)
 
 }

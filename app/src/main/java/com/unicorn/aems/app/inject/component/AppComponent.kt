@@ -3,7 +3,7 @@ package com.ivotai.kotlindemo.app.inject.component
 import com.ivotai.kotlindemo.app.inject.module.BoxModule
 import com.ivotai.kotlindemo.app.inject.module.NetworkModule
 import com.ivotai.kotlindemo.app.inject.scope.AppScope
-import com.ivotai.kotlindemo.movie.inject.component.AirportComponent
+import com.unicorn.aems.airport.inject.component.AirportComponent
 import dagger.Component
 
 

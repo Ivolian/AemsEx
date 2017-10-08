@@ -13,7 +13,7 @@ abstract class BaseAct : AppCompatActivity() {
         setContentView(layoutResId)
         injectDependencies()
         initViews(savedInstanceState)
-        bindPresenter(savedInstanceState)
+        bindPresenter()
     }
 
     abstract val layoutResId: Int
@@ -22,7 +22,7 @@ abstract class BaseAct : AppCompatActivity() {
 
     abstract fun initViews(savedInstanceState: Bundle?)
 
-    abstract fun bindPresenter(savedInstanceState: Bundle?)
+    abstract fun bindPresenter()
 
     protected fun clicksFinish(view: View) {
         RxView.clicks(view)

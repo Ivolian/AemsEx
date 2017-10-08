@@ -14,7 +14,7 @@
         android:padding="8dp">
 
         <EditText
-            android:id="@+id/etSearch"
+            android:id="@+id/etQuery"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -25,7 +25,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/tvCancel"
+            android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
