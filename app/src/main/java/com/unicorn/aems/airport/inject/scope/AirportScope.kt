@@ -1,4 +1,4 @@
-package com.ivotai.kotlindemo.movie.inject.scope
+package com.unicorn.aems.airport.inject.scope
 
 import javax.inject.Scope
 

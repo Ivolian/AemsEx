@@ -29,17 +29,20 @@ class AirportPresenter(private var view: AirportView, private var repository: Ai
                     airport.updateDate = Date()
                 }
                 airports
+            }.subscribeBy(
+            onNext = { airports ->
+                if (airports.isEmpty()) {
+                    ToastUtils.showShort("已是最新列表!")
+                } else {
+                    ToastUtils.showShort("更新机场列表成功!")
+                    repository.put(airports)
+                    load()
+                }
+            },
+            onError = {
+                ToastUtils.showShort("更新机场失败")
             }
-            .subscribeBy(
-                    onNext = {
-                        repository.put(it)
-                        load()
-                    },
-                    onError = {
-                        ToastUtils.showShort("更新机场失败")
-                    }
-            )
-
+    )
 
     fun onKeywordChange(text: String) {
         load(text)

@@ -16,30 +16,6 @@ import org.joda.time.DateTime
 
 class AirportRepositoryImpl(private val api: AirportApi, private val box: Box<Airport>) : AirportRepository {
 
-    override fun checkForUpdates(): Observable<AirportResponse> {
-        return api.getAppDataConfig(lastUpdateDate, "airportInfo")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-    }
-
-
-    // 测试
-    // 当数据为空返回空ArrayList
-    // todo check 逻辑删除
-    override fun query(keyword: String): Observable<List<Airport>> {
-        val qu = box.query()
-                .equal(Airport_.deleted, 0)
-                .contains(Airport_.name, keyword)
-                .or()
-                .equal(Airport_.deleted, 0)
-                .contains(Airport_.pinyin, keyword.toUpperCase())
-                .build()
-        return RxQuery.observable(qu)
-                .observeOn(AndroidSchedulers.mainThread())
-    }
-
-    // 测试
-    // 当数据为空时返回 19000101000000
     override val lastUpdateDate: String
         get() {
             val airport = box.query()
@@ -51,16 +27,32 @@ class AirportRepositoryImpl(private val api: AirportApi, private val box: Box<Ai
             else DateTime(airport.updateDate).toString("yyyyMMddHHmmss")
         }
 
+    override fun checkForUpdates(): Observable<AirportResponse> =
+            api.getAppDataConfig(lastUpdateDate, "airportInfo")
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+
+
+    override fun query(keyword: String): Observable<List<Airport>> {
+        val query = box.query()
+                .equal(Airport_.deleted, 0)
+                .contains(Airport_.name, keyword)
+                .or()
+                .equal(Airport_.deleted, 0)
+                .contains(Airport_.pinyin, keyword.toUpperCase())
+                .build()
+        return RxQuery.observable(query)
+                .observeOn(AndroidSchedulers.mainThread())
+    }
+
     override fun put(airports: List<Airport>) {
         box.put(airports)
     }
 
-
     override fun defaultAirport(): Airport? = box.query()
-                .equal(Airport_.deleted, 0)
-                .build()
-                .findFirst()
-
+            .equal(Airport_.deleted, 0)
+            .build()
+            .findFirst()
 
 }
 

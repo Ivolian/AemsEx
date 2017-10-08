@@ -29,7 +29,6 @@ class AirportAct : BaseAct(), AirportView {
     override fun initView(savedInstanceState: Bundle?) {
         initEtQuery()
         initIndexableLayout()
-        clicksFinish(cancel)
     }
 
     private fun initEtQuery() = with(etQuery) {

@@ -20,10 +20,10 @@ class Airport(
         var pinyin: String
 ) : IndexableEntity {
 
-    override fun setFieldIndexBy(indexField: String?) {
+    override fun setFieldIndexBy(indexField: String) {
     }
 
-    override fun setFieldPinyinIndexBy(pinyin: String?) {
+    override fun setFieldPinyinIndexBy(pinyin: String) {
     }
 
     override fun getFieldIndexBy() = pinyin
