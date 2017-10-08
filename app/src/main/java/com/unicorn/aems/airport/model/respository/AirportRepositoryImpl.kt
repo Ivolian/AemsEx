@@ -1,6 +1,6 @@
 package com.ivotai.kotlindemo.movie.model.respository
 
-//import io.objectbox.rx.RxQuery
+
 import com.ivotai.kotlindemo.movie.model.entity.Airport
 import com.ivotai.kotlindemo.movie.model.entity.Airport_
 import com.unicorn.aems.airport.model.api.AirportApi

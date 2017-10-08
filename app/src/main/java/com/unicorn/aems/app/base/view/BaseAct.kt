@@ -12,17 +12,24 @@ abstract class BaseAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(layoutResId)
         injectDependencies()
-        initViews(savedInstanceState)
-        bindPresenter()
+        initView(savedInstanceState)
+        bindEvents()
     }
+
+    private fun bindEvents() {
+        bindViewEvents()
+        bindPresenterEvent()
+    }
+
+    abstract fun bindViewEvents()
 
     abstract val layoutResId: Int
 
     protected fun injectDependencies() {}
 
-    abstract fun initViews(savedInstanceState: Bundle?)
+    abstract fun initView(savedInstanceState: Bundle?)
 
-    abstract fun bindPresenter()
+    abstract fun bindPresenterEvent()
 
     protected fun clicksFinish(view: View) {
         RxView.clicks(view)
