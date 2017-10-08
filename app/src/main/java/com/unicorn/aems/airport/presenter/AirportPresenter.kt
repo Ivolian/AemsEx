@@ -2,8 +2,8 @@ package com.unicorn.aems.airport.presenter
 
 import com.blankj.utilcode.util.ToastUtils
 import com.github.promeg.pinyinhelper.Pinyin
-import com.ivotai.kotlindemo.movie.model.entity.Airport
-import com.unicorn.aems.airport.model.respository.AirportRepository
+import com.unicorn.aems.airport.model.entity.Airport
+import com.unicorn.aems.airport.model.repository.AirportRepository
 import com.unicorn.aems.airport.view.AirportView
 import com.unicorn.aems.app.base.presenter.BasePresenter
 import io.reactivex.rxkotlin.subscribeBy

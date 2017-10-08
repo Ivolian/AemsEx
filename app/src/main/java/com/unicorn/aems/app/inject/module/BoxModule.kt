@@ -1,8 +1,8 @@
-package com.ivotai.kotlindemo.app.inject.module
+package com.unicorn.aems.app.inject.module
 
 import com.ivotai.kotlindemo.app.inject.scope.AppScope
-import com.ivotai.kotlindemo.movie.model.entity.MyObjectBox
 import com.unicorn.aems.BuildConfig
+import com.unicorn.aems.airport.model.entity.MyObjectBox
 import com.unicorn.aems.app.App
 import dagger.Module
 import dagger.Provides

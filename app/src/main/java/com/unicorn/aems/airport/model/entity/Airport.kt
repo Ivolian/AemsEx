@@ -1,4 +1,4 @@
-package com.ivotai.kotlindemo.movie.model.entity
+package com.unicorn.aems.airport.model.entity
 
 import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id

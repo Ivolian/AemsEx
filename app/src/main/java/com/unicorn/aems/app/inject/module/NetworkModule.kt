@@ -23,12 +23,23 @@ class NetworkModule {
             .build()
 
     private val apkBaseUrl = "http://ivotai.natapp1.cc/aems/"
+    private val defaultBaseUrl = "http://ivotai.natapp1.cc/aems/"
 
     @AppScope
     @Provides
     @Named(value = "apk")
     fun retrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
             .baseUrl(apkBaseUrl)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create(Gson()))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build()
+
+    @AppScope
+    @Provides
+    @Named(value = "default")
+    fun retrofit2(client: OkHttpClient): Retrofit = Retrofit.Builder()
+            .baseUrl(defaultBaseUrl)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

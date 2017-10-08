@@ -66,7 +66,7 @@ dependencies {
     compile "com.mikepenz:iconics-core:2.9.3@aar"
     compile 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
     compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
-
+    compile "com.mikepenz:iconics-views:2.9.3@aar"
     debugImplementation "io.objectbox:objectbox-android-objectbrowser:$objectbox_version"
     releaseImplementation "io.objectbox:objectbox-android:$objectbox_version"
     implementation "io.objectbox:objectbox-rxjava:$objectbox_rxjava_version"

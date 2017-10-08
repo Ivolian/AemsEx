@@ -1,8 +1,9 @@
 package com.unicorn.aems.airport.inject.component
 
 import com.unicorn.aems.airport.inject.module.AirportModule
+import com.unicorn.aems.user.inject.module.UserModule
 import com.unicorn.aems.airport.inject.scope.AirportScope
-import com.unicorn.aems.airport.model.respository.AirportRepository
+import com.unicorn.aems.airport.model.repository.AirportRepository
 import dagger.Subcomponent
 
 

@@ -5,13 +5,9 @@
   "entities": [
     {
       "id": "1:1015338351004816562",
-      "lastPropertyId": "9:8495478189960704506",
+      "lastPropertyId": "10:3558202750332806669",
       "name": "Airport",
       "properties": [
-        {
-          "id": "1:6741054422666492748",
-          "name": "_id"
-        },
         {
           "id": "2:1215287954060420523",
           "name": "id"
@@ -43,20 +39,51 @@
         {
           "id": "9:8495478189960704506",
           "name": "deleted"
+        },
+        {
+          "id": "10:3558202750332806669",
+          "name": "_id"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:7042919679772672781",
+      "lastPropertyId": "4:3183262008330065803",
+      "name": "LoginInfo",
+      "properties": [
+        {
+          "id": "1:1352465180462422563",
+          "name": "_id"
+        },
+        {
+          "id": "2:9110216119389094512",
+          "name": "account"
+        },
+        {
+          "id": "3:840771602114180735",
+          "name": "pwd"
+        },
+        {
+          "id": "4:3183262008330065803",
+          "indexId": "1:4637910283770290780",
+          "name": "airportId"
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "1:1015338351004816562",
-  "lastIndexId": "0:0",
+  "lastEntityId": "2:7042919679772672781",
+  "lastIndexId": "1:4637910283770290780",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    6741054422666492748
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

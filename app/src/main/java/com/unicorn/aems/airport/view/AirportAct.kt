@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.blankj.utilcode.util.ConvertUtils
 import com.ivotai.kotlindemo.app.ComponentsHolder
 import com.ivotai.kotlindemo.app.base.view.BaseAct
-import com.ivotai.kotlindemo.movie.model.entity.Airport
+import com.unicorn.aems.airport.model.entity.Airport
 import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.mikepenz.fontawesome_typeface_library.FontAwesome

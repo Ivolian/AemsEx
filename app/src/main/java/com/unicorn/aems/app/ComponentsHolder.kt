@@ -1,7 +1,7 @@
 package com.ivotai.kotlindemo.app
 
 import com.ivotai.kotlindemo.app.inject.component.DaggerAppComponent
-import com.ivotai.kotlindemo.app.inject.module.BoxModule
+import com.unicorn.aems.app.inject.module.BoxModule
 import com.ivotai.kotlindemo.app.inject.module.NetworkModule
 import com.unicorn.aems.app.App
 
@@ -23,6 +23,10 @@ object ComponentsHolder {
 
     val airportComponent by lazy {
         appComponent.getAirportComponent()
+    }
+
+    val userComponent by lazy {
+        appComponent.getUserComponent()
     }
 
 }

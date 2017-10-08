@@ -4,10 +4,6 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.ivotai.kotlindemo.app.inject.module.BoxModule;
-import com.ivotai.kotlindemo.movie.model.entity.Airport;
-import com.ivotai.kotlindemo.movie.model.entity.MyObjectBox;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

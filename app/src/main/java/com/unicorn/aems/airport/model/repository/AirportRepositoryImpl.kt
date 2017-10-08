@@ -1,11 +1,9 @@
-package com.ivotai.kotlindemo.movie.model.respository
+package com.unicorn.aems.airport.model.repository
 
-
-import com.ivotai.kotlindemo.movie.model.entity.Airport
-import com.ivotai.kotlindemo.movie.model.entity.Airport_
+import com.unicorn.aems.airport.model.entity.Airport
 import com.unicorn.aems.airport.model.api.AirportApi
 import com.unicorn.aems.airport.model.entity.AirportResponse
-import com.unicorn.aems.airport.model.respository.AirportRepository
+import com.unicorn.aems.airport.model.entity.Airport_
 import io.objectbox.Box
 import io.objectbox.rx.RxQuery
 import io.reactivex.Observable

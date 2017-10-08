@@ -12,8 +12,4 @@ interface UserApi {
     @POST("login")
     fun login(@Query("username") userName: String, @Query("password") password: String): Observable<SessionInfo>
 
-//    @Headers("Content-Type:application/json", "Client-Type: Android")
-//    @PUT("api/v1/appService/modifyPassword")
-//    fun modifyPassword(@Header("Cookie") cookie: String, @Body data: Map<*, *>): Observable<Any>
-
 }

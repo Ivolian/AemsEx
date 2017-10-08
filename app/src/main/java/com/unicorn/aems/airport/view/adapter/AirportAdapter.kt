@@ -1,12 +1,11 @@
 package com.unicorn.aems.airport.view.adapter
 
-
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.ivotai.kotlindemo.movie.model.entity.Airport
 import com.unicorn.aems.R
+import com.unicorn.aems.airport.model.entity.Airport
 import com.unicorn.aems.app.base.view.VH
 import kotlinx.android.synthetic.main.index_airport.*
 import kotlinx.android.synthetic.main.item_airport.*
@@ -20,13 +19,13 @@ class AirportAdapter(context: Context, private val layoutInflater: LayoutInflate
     override fun onCreateContentViewHolder(parent: ViewGroup) = VH(layoutInflater.inflate(R.layout.item_airport, parent, false))
 
     override fun onBindTitleViewHolder(holder: RecyclerView.ViewHolder, indexTitle: String) {
-        val indexViewHolder = holder as VH
-        indexViewHolder.tvIndex.text = indexTitle
+        val vh = holder as VH
+        vh.tvIndex.text = indexTitle
     }
 
     override fun onBindContentViewHolder(holder: RecyclerView.ViewHolder, airport: Airport) {
-        val itemViewHolder = holder as VH
-        itemViewHolder.tvAirport.text = airport.name
+        val vh = holder as VH
+        vh.tvAirport.text = airport.name
     }
 
 }

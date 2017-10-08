@@ -1,6 +1,6 @@
-package com.unicorn.aems.airport.model.respository
+package com.unicorn.aems.airport.model.repository
 
-import com.ivotai.kotlindemo.movie.model.entity.Airport
+import com.unicorn.aems.airport.model.entity.Airport
 import com.unicorn.aems.airport.model.entity.AirportResponse
 import io.reactivex.Observable
 

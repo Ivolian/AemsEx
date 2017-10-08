@@ -1,9 +1,9 @@
 package com.unicorn.aems.airport.inject.module
 
 import com.unicorn.aems.airport.inject.scope.AirportScope
-import com.ivotai.kotlindemo.movie.model.entity.Airport
-import com.unicorn.aems.airport.model.respository.AirportRepository
-import com.ivotai.kotlindemo.movie.model.respository.AirportRepositoryImpl
+import com.unicorn.aems.airport.model.entity.Airport
+import com.unicorn.aems.airport.model.repository.AirportRepository
+import com.unicorn.aems.airport.model.repository.AirportRepositoryImpl
 import com.unicorn.aems.airport.model.api.AirportApi
 import dagger.Module
 import dagger.Provides

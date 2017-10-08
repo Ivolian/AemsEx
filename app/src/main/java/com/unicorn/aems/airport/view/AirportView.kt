@@ -1,6 +1,6 @@
 package com.unicorn.aems.airport.view
 
-import com.ivotai.kotlindemo.movie.model.entity.Airport
+import com.unicorn.aems.airport.model.entity.Airport
 
 
 interface AirportView {
